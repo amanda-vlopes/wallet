@@ -39,8 +39,9 @@ class Table extends Component {
                       <button
                         data-testid="delete-btn"
                         onClick={ () => dispatch(deleteExpense(id)) }
+                        className="material-symbols-outlined"
                       >
-                        Excluir
+                        delete
                       </button>
                       <button
                         data-testid="edit-btn"

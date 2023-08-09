@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import wallet from '../images/wallet.png';
 import { saveUser } from '../redux/actions';
 
 class Login extends React.Component {
@@ -34,31 +35,39 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div>
-        <input
-          type="text"
-          data-testid="email-input"
-          name="email"
-          value={ email }
-          onChange={ this.saveInfoInput }
-          placeholder="Digite aqui o seu email"
-        />
+      <div className='login_page'>
+        <div className='login_container'>
+          <div className='title_container'>
+            <img src={ wallet } alt="wallet" />
+            <h1>MyWallet</h1>
+          </div>
+          <div className='input_container'>
+            <input
+              type="text"
+              data-testid="email-input"
+              name="email"
+              value={ email }
+              onChange={ this.saveInfoInput }
+              placeholder="Digite aqui o seu email"
+            />
 
-        <input
-          type="password"
-          data-testid="password-input"
-          name="password"
-          onChange={ this.saveInfoInput }
-          value={ password }
-          placeholder="Digite a sua senha"
-        />
+            <input
+              type="password"
+              data-testid="password-input"
+              name="password"
+              onChange={ this.saveInfoInput }
+              value={ password }
+              placeholder="Digite a sua senha"
+            />
 
-        <button
-          disabled={ this.isButtonDisabled() }
-          onClick={ this.goToWallet }
-        >
-          Entrar
-        </button>
+            <button
+              disabled={ this.isButtonDisabled() }
+              onClick={ this.goToWallet }
+            >
+              Entrar
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
